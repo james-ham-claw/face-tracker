@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f0f2f5;
+    --text-color: #1a1a2e;
+    --accent-color: #4361ee;
+    --accent-hover: #3a56d4;
+    --card-bg: #e8eaf6;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.handle {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Main content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Face container - centered and fixed position for tracking */
+.face-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto 40px;
+    border-radius: 16px;
+    overflow: visible;
+}
+
+/* The face placeholder styling */
+.face-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.08s ease-out;
+    pointer-events: none;
+    box-shadow: 0 8px 32px rgba(67, 97, 238, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.face-img.active {
+    opacity: 1;
+}
+
+/* Angle labels inside placeholders */
+.angle-label {
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    user-select: none;
+}
+
+/* Center face - only shows when mouse is close to center */
+.face-img.center-face {
+    opacity: 0;
+    z-index: 1;
+}
+
+.face-img.center-face.active {
+    opacity: 1;
+}
+
+.face-img.center-face .angle-label {
+    font-size: 32px;
+}
+
+/* Decorative frame behind the face */
+.face-container::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 16px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Crosshair indicator (optional - shows tracking center) */
+.face-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: rgba(67, 97, 238, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Name and title */
+.name {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    color: var(--text-color);
+}
+
+.title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.bio {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #666;
+    max-width: 380px;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+.btn-secondary {
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background: #dde0f0;
+}
+
+.icon {
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .face-container {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .name {
+        font-size: 26px;
+    }
+}
+
+/* Color guide for placeholders:
+   0°   → Red         | 180° → Purple
+   22°  → Orange      | 202° → Pink
+   45°  → Yellow      | 225° → Hot pink
+   67°  → Green-teal  | 247° → Magenta
+   90°  → Teal        | 270° → Orange-red
+   112° → Cyan        | 292° → Coral
+   135° → Blue        | 315° → Tomato
+   157° → Indigo      | 337° → Crimson
+   Center → Gray
+*/
+
+/* Background colors for each angle */
+.face-img[data-angle="000"] { background: linear-gradient(135deg, #ff6b6b, #ee5a52) !important; }
+.face-img[data-angle="022"] { background: linear-gradient(135deg, #feca57, #ff9f43) !important; }
+.face-img[data-angle="045"] { background: linear-gradient(135deg, #f9ca24, #f0932b) !important; }
+.face-img[data-angle="067"] { background: linear-gradient(135deg, #1dd1a1, #10ac84) !important; }
+.face-img[data-angle="090"] { background: linear-gradient(135deg, #00d2d3, #01a3a4) !important; }
+.face-img[data-angle="112"] { background: linear-gradient(135deg, #48dbfb, #0abde3) !important; }
+.face-img[data-angle="135"] { background: linear-gradient(135deg, #54a0ff, #2e86de) !important; }
+.face-img[data-angle="157"] { background: linear-gradient(135deg, #5f27cd, #341f97) !important; }
+.face-img[data-angle="180"] { background: linear-gradient(135deg, #a29bfe, #6c5ce7) !important; }
+.face-img[data-angle="202"] { background: linear-gradient(135deg, #fd79a8, #e84393) !important; }
+.face-img[data-angle="225"] { background: linear-gradient(135deg, #ff9ff3, #f368e0) !important; }
+.face-img[data-angle="247"] { background: linear-gradient(135deg, #786fa6, #574b90) !important; }
+.face-img[data-angle="270"] { background: linear-gradient(135deg, #ff9f43, #ee5a24) !important; }
+.face-img[data-angle="292"] { background: linear-gradient(135deg, #ea8685, #e66767) !important; }
+.face-img[data-angle="315"] { background: linear-gradient(135deg, #ff6348, #ff4757) !important; }
+.face-img[data-angle="337"] { background: linear-gradient(135deg, #c44569, #cf6a87) !important; }
+.face-img[data-angle="center"] { background: linear-gradient(135deg, #a4b0be, #747d8c) !important; }
