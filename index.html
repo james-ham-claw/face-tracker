@@ -3,95 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Philipp Ham - Frontend Developer</title>
+    <title>Philipp Ham</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="handle">@philippham</div>
-            <button class="menu-btn">☰</button>
-        </header>
+        <div class="face-container" id="faceContainer">
+            <div class="face-img" data-angle="000"></div>
+            <div class="face-img" data-angle="022"></div>
+            <div class="face-img" data-angle="045"></div>
+            <div class="face-img" data-angle="067"></div>
+            <div class="face-img" data-angle="090"></div>
+            <div class="face-img" data-angle="112"></div>
+            <div class="face-img" data-angle="135"></div>
+            <div class="face-img" data-angle="157"></div>
+            <div class="face-img" data-angle="180"></div>
+            <div class="face-img" data-angle="202"></div>
+            <div class="face-img" data-angle="225"></div>
+            <div class="face-img" data-angle="247"></div>
+            <div class="face-img" data-angle="270"></div>
+            <div class="face-img" data-angle="292"></div>
+            <div class="face-img" data-angle="315"></div>
+            <div class="face-img active" data-angle="337"></div>
+            <div class="face-img center-face" data-angle="center"></div>
+        </div>
 
-        <main>
-            <!-- Face container centered -->
-            <div class="face-container" id="faceContainer">
-                <!-- 16 radial slices + center - using colored divs as placeholders -->
-                <!-- Angles are where the face is LOOKING (0=right, 90=down, 180=left, 270=up) -->
-                
-                <!-- 0° - Looking Right (Red) -->
-                <div class="face-img" data-angle="000"><span class="angle-label">→</span></div>
-                
-                <!-- 22.5° - Looking Down-Right -->
-                <div class="face-img" data-angle="022"><span class="angle-label">↘</span></div>
-                
-                <!-- 45° - Looking Down-Right -->
-                <div class="face-img" data-angle="045"><span class="angle-label">↘</span></div>
-                
-                <!-- 67.5° - Looking Down-Right -->
-                <div class="face-img" data-angle="067"><span class="angle-label">↘</span></div>
-                
-                <!-- 90° - Looking Down (Green) -->
-                <div class="face-img" data-angle="090"><span class="angle-label">↓</span></div>
-                
-                <!-- 112.5° - Looking Down-Left -->
-                <div class="face-img" data-angle="112"><span class="angle-label">↙</span></div>
-                
-                <!-- 135° - Looking Down-Left -->
-                <div class="face-img" data-angle="135"><span class="angle-label">↙</span></div>
-                
-                <!-- 157.5° - Looking Down-Left -->
-                <div class="face-img" data-angle="157"><span class="angle-label">↙</span></div>
-                
-                <!-- 180° - Looking Left (Purple) -->
-                <div class="face-img" data-angle="180"><span class="angle-label">←</span></div>
-                
-                <!-- 202.5° - Looking Up-Left -->
-                <div class="face-img" data-angle="202"><span class="angle-label">↖</span></div>
-                
-                <!-- 225° - Looking Up-Left -->
-                <div class="face-img" data-angle="225"><span class="angle-label">↖</span></div>
-                
-                <!-- 247.5° - Looking Up-Left -->
-                <div class="face-img" data-angle="247"><span class="angle-label">↖</span></div>
-                
-                <!-- 270° - Looking Up (Orange) -->
-                <div class="face-img" data-angle="270"><span class="angle-label">↑</span></div>
-                
-                <!-- 292.5° - Looking Up-Right -->
-                <div class="face-img" data-angle="292"><span class="angle-label">↗</span></div>
-                
-                <!-- 315° - Looking Up-Right -->
-                <div class="face-img" data-angle="315"><span class="angle-label">↗</span></div>
-                
-                <!-- 337.5° - Looking Up-Right -->
-                <div class="face-img active" data-angle="337"><span class="angle-label">↗</span></div>
-                
-                <!-- Center/neutral (Gray) -->
-                <div class="face-img center-face" data-angle="center" style="background: linear-gradient(135deg, #a4b0be, #747d8c);"><span class="angle-label">●</span></div>
-            </div>
-
-            <h1 class="name">PHILIPP HAM</h1>
-            <p class="title">FRONTEND DEVELOPER • REACT & TYPESCRIPT</p>
-
-            <p class="bio">
-                I BUILD MODERN WEB APPLICATIONS WITH A FOCUS ON USER EXPERIENCE.
-                FROM SALZBURG, AUSTRIA — PASSIONATE ABOUT CYCLING, SKIING, AND MAGIC: THE GATHERING.
-            </p>
-
-            <div class="buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <span class="icon">⚡</span> VIEW PROJECTS
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <span class="icon">✉</span> GET IN TOUCH
-                </a>
-            </div>
-        </main>
-
-        <footer>
-            <div class="logo">P</div>
-        </footer>
+        <h1 class="name">Philipp Ham</h1>
     </div>
 
     <script src="script.js"></script>
