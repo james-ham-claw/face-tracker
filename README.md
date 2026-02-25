@@ -130,7 +130,7 @@ Works in all modern browsers with touch support for mobile.
 
 ## View Live
 
-**URL:** https://ubuntu-4gb-openclaw.tail15e27e.ts.net:444
+**URL:** https://james-ham-claw.github.io/face-tracker/
 
 ## Troubleshooting
 
